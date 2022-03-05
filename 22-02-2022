@@ -106,5 +106,6 @@ int main()
         fprintf(fp, "\nThe frequence of %d is: %d", i+1, freq[i]);
     }
     
+    close(fp);
     return 0;
 }
