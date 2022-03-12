@@ -1,3 +1,4 @@
+/* 1o Μέρος */
 /* 1=κοροόνα - 0=γράμματα */
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,7 +12,7 @@ main()
 	int i, result, freq[2];
 	FILE *fp;
 	
-	fopen("test.txt", "w+");
+	fopen("test.txt", "w");
 	
 	for (i=0; i<2; i++)
 	{
@@ -28,7 +29,43 @@ main()
 	}
 	
 	fprintf(fp, "The frequence of korona is: %d", freq[0]);
-	fprintf(fp, "The frequence of korona is: %d", freq[1]);
+	fprintf(fp, "The frequence of grammata is: %d", freq[1]);
+	
+	close(fp);
+	return 0;
+}
+
+/*2ο Μέρος */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define N 10
+
+main()
+{
+	srand(time(NULL));
+	int i, result, freq[2];
+	FILE *fp;
+	
+	fopen("test.txt", "w");
+	
+	for (i=0; i<2; i++)
+	{
+		freq[i] = 0;
+	}
+	
+	for (i=0; i<N; i++)
+	{
+		result = rand()%10;
+		if (result>5)
+			freq[0]++; 
+		else
+			freq[1]++; 
+	}
+	
+	fprintf(fp, "The frequence of korona is: %d", freq[0]);
+	fprintf(fp, "The frequence of grammata is: %d", freq[1]);
 	
 	close(fp);
 	return 0;
