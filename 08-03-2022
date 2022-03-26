@@ -1,0 +1,33 @@
+// Ερώτημα 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define N 100
+#define M 10
+
+int main()
+{
+    srand(time(NULL));
+    
+    int korona, grammata;
+    int cnt=0, num, i, j;
+    
+    for (i=0; i<N; i++)
+    {
+        korona = 0;
+        grammata = 0;
+        for (j=0; i<M; j++)
+        {
+            num = rand()%2;
+            if (num == 1)
+                korona++;
+                if (j==2 && korona == 3)
+                    cnt++;
+            else
+                grammata++;
+        }
+    }
+    printf("I pithanotita einai: %d %%", cnt);
+    
+    return 0;
+}
